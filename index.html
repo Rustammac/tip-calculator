@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">tip calculator</h1>
+      <p>enter the bill amount and tip percentage to calculate the total.</p>
+      <label for="bill">bill amount:</label>
+      <input type="number" name="bill" id="bill" class="input" required />
+      <br />
+      <label for="tip">tip percentage:</label>
+      <input type="number" name="tip" id="tip" class="input" required />
+      <br />
+      <button id="btn" class="btn" type="submit">calculate</button>
+      <br />
+      <label for="total" id="total">total:</label>
+    </div>
+    <script>
+      const billEl = document.getElementById("bill");
+      const tipEl = document.getElementById("tip");
+      const btnEl = document.getElementById("btn");
+      const totalEl = document.getElementById("total");
+
+      /*       function tipCalculator() {
+        billAmount = document.getElementById("bill").value;
+        tipAmount = document.getElementById("tip").value;
+        result = (billAmount * tipAmount) / 100;
+
+        document.getElementById("total").innerHTML = `total: ${total}`;
+      } */
+      function calculateTotal() {
+        const billValue = billEl.value;
+        const tipValue = tipEl.value;
+        const totalValue = (billValue * tipValue) / 100;
+        totalEl.innerText = `total: ${totalValue}`;
+      }
+      btnEl.addEventListener("click", calculateTotal);
+    </script>
+  </body>
+</html>
